@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="#1E293B"/>
+
+  <!-- 盾牌外框 -->
+  <path d="M200 50L300 100V180C300 220 200 250 200 250C200 250 100 220 100 180V100L200 50Z" 
+    stroke="#F59E0B" 
+    stroke-width="8"
+    fill="none"
+  >
+    <animate attributeName="stroke-dasharray" values="0,1000;1000,0" dur="3s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- 内部防护网格 -->
+  <g opacity="0.6">
+    <path d="M150 120H250" stroke="#F59E0B" stroke-width="4">
+      <animate attributeName="stroke-opacity" values="0.2;1;0.2" dur="2s" repeatCount="indefinite"/>
+    </path>
+    <path d="M150 160H250" stroke="#F59E0B" stroke-width="4">
+      <animate attributeName="stroke-opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite"/>
+    </path>
+    <path d="M150 200H250" stroke="#F59E0B" stroke-width="4">
+      <animate attributeName="stroke-opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite"/>
+    </path>
+    <path d="M200 120V200" stroke="#F59E0B" stroke-width="4">
+      <animate attributeName="stroke-opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- 旋转防护圈 -->
+  <circle cx="200" cy="160" r="50" stroke="#F59E0B" stroke-width="4" fill="none">
+    <animateTransform
+      attributeName="transform"
+      type="rotate"
+      from="0 200 160"
+      to="360 200 160"
+      dur="10s"
+      repeatCount="indefinite"
+    />
+  </circle>
+
+  <!-- 脉冲效果 -->
+  <circle cx="200" cy="160" r="30" stroke="#F59E0B" stroke-width="4" fill="none">
+    <animate attributeName="r" values="25;35;25" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="stroke-opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- 扫描效果 -->
+  <defs>
+    <linearGradient id="shield-scan" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F59E0B" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#F59E0B" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0"/>
+      <animate attributeName="y1" values="0;1;0" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="0;1;0" dur="3s" repeatCount="indefinite"/>
+    </linearGradient>
+  </defs>
+  <path d="M200 50L300 100V180C300 220 200 250 200 250C200 250 100 220 100 180V100L200 50Z" 
+    fill="url(#shield-scan)" 
+    opacity="0.2"
+  />
+
+  <!-- 安全检查标记 -->
+  <path d="M170 160L190 180L230 140" 
+    stroke="#F59E0B" 
+    stroke-width="8" 
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <animate attributeName="stroke-dasharray" values="0,1000;1000,0" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="stroke-width" values="6;10;6" dur="2s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- 浮动保护点 -->
+  <g>
+    <circle cx="200" cy="100" r="6" fill="#F59E0B">
+      <animate attributeName="cy" values="95;105;95" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="150" cy="140" r="6" fill="#F59E0B">
+      <animate attributeName="cy" values="135;145;135" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0.4;1" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="250" cy="140" r="6" fill="#F59E0B">
+      <animate attributeName="cy" values="145;135;145" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg> 
